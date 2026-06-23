@@ -71,6 +71,46 @@ Swap stub tools for MCP tools in `tools.py` when connecting to a live cluster.
 
 Built as a portfolio demonstration of AI-powered security operations for cloud-native environments. The same pattern applies to any platform running Kubernetes workloads — swap the log sources in `logs/` and update DuckDB queries in `db.py` to adapt.
 
+## 🔌 LLM Flexibility — Bring Your Own Model
+
+aiops-sec-agent is LLM-agnostic by design. While the default configuration uses Anthropic Claude (Sonnet), 
+you can swap in any model that fits your cost, latency, or air-gap requirements.
+
+### Supported Options
+
+| Model | Provider | Best For | Notes |
+|-------|----------|----------|-------|
+| `claude-sonnet-4-6` | Anthropic API | Default — highest reasoning quality | Recommended for MITRE tagging accuracy |
+| `claude-haiku-4-5` | Anthropic API | Low-cost, high-throughput triage | ~10x cheaper than Sonnet |
+| `mistral-small` / `mistral-large` | Mistral AI | Cost-efficient, EU data residency | Strong for structured JSON output |
+| `llama3:8b` / `llama3:70b` | Ollama (self-hosted) | Air-gapped / OT environments | Run fully offline via `ollama serve` |
+| `mistral:7b` | Ollama (self-hosted) | Lightweight air-gap deployments | Excellent on-prem option |
+| `gpt-4o-mini` | Azure OpenAI | Enterprise Azure environments | Integrates with existing Azure RBAC |
+| `gemma2:9b` | Ollama (self-hosted) | Edge / resource-constrained nodes | Smallest footprint |
+
+### Switching the LLM
+
+In `config.py` (or `.env`), update:
+
+```python
+# Anthropic (default)
+LLM_PROVIDER = "anthropic"
+LLM_MODEL = "claude-sonnet-4-6"
+
+# Ollama (air-gapped / self-hosted)
+LLM_PROVIDER = "ollama"
+LLM_MODEL = "llama3:70b"
+OLLAMA_BASE_URL = "http://localhost:11434"
+
+# Azure OpenAI
+LLM_PROVIDER = "azure_openai"
+LLM_MODEL = "gpt-4o-mini"
+AZURE_OPENAI_ENDPOINT = "https://<your-resource>.openai.azure.com"
+```
+
+LangGraph's `ChatAnthropic`, `ChatOllama`, and `ChatOpenAI` adapters make this a one-line swap. 
+For air-gapped OT/ICS deployments, Ollama with Llama 3 or Mistral 7B is the recommended path.
+
 ## License
 
 MIT
