@@ -1,6 +1,6 @@
 # aiops-sec-agent
 
-A LangGraph multi-agent system for OT/ICS security operations. Correlates logs across 9 platform sources, triages alerts with MITRE ATLAS technique tagging, and generates structured incident reports using Claude AI as the reasoning engine.
+A LangGraph multi-agent system for cloud-native security operations. Correlates logs across 9 platform sources, triages alerts with MITRE ATLAS technique tagging, and generates structured incident reports using Claude AI as the reasoning engine.
 
 ## Architecture
 
