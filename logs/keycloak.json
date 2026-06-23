@@ -1,0 +1,14 @@
+[
+  {"timestamp":"2026-06-03T09:58:00Z","event_type":"TOKEN_REFRESH","user":"svc-aiops-sec-agent","realm":"secops","client":"secops-backend","result":"SUCCESS","ip_address":"10.0.1.45","session_id":"sess-a1b2c3","token_type":"access_token","error":null},
+  {"timestamp":"2026-06-03T09:59:50Z","event_type":"TOKEN_REFRESH","user":"svc-aiops-sec-agent","realm":"secops","client":"secops-backend","result":"FAILURE","ip_address":"10.0.1.45","session_id":"sess-a1b2c3","token_type":"access_token","error":"Token expired"},
+  {"timestamp":"2026-06-03T10:00:05Z","event_type":"LOGIN","user":"svc-aiops-sec-agent","realm":"secops","client":"secops-backend","result":"FAILURE","ip_address":"10.0.1.45","session_id":null,"token_type":null,"error":"Invalid client credentials"},
+  {"timestamp":"2026-06-03T10:00:08Z","event_type":"LOGIN","user":"svc-aiops-sec-agent","realm":"secops","client":"secops-backend","result":"FAILURE","ip_address":"10.0.1.45","session_id":null,"token_type":null,"error":"Invalid client credentials"},
+  {"timestamp":"2026-06-03T10:00:12Z","event_type":"LOGIN","user":"svc-aiops-sec-agent","realm":"secops","client":"secops-backend","result":"FAILURE","ip_address":"10.0.1.45","session_id":null,"token_type":null,"error":"Invalid client credentials"},
+  {"timestamp":"2026-06-03T10:00:15Z","event_type":"CLIENT_SECRET_ROTATION","user":"admin","realm":"secops","client":"secops-backend","result":"SUCCESS","ip_address":"10.0.0.10","session_id":"sess-admin-99","token_type":null,"error":null},
+  {"timestamp":"2026-06-03T10:00:18Z","event_type":"JWKS_ROTATION","user":"system","realm":"secops","client":null,"result":"SUCCESS","ip_address":"127.0.0.1","session_id":null,"token_type":null,"error":null},
+  {"timestamp":"2026-06-03T10:00:50Z","event_type":"LOGIN","user":"svc-nozomi","realm":"secops","client":"ot-connector","result":"SUCCESS","ip_address":"10.0.2.15","session_id":"sess-d4e5f6","token_type":null,"error":null},
+  {"timestamp":"2026-06-03T10:01:45Z","event_type":"LOGIN","user":"svc-argocd","realm":"secops","client":"argocd","result":"SUCCESS","ip_address":"10.0.0.22","session_id":"sess-g7h8i9","token_type":null,"error":null},
+  {"timestamp":"2026-06-03T10:02:55Z","event_type":"TOKEN_REFRESH","user":"svc-nozomi","realm":"secops","client":"ot-connector","result":"SUCCESS","ip_address":"10.0.2.15","session_id":"sess-d4e5f6","token_type":"access_token","error":null},
+  {"timestamp":"2026-06-03T10:03:00Z","event_type":"LOGIN","user":"svc-aiops-sec-agent","realm":"secops","client":"secops-backend","result":"SUCCESS","ip_address":"10.0.1.47","session_id":"sess-j0k1l2","token_type":null,"error":null},
+  {"timestamp":"2026-06-03T10:03:05Z","event_type":"PERMISSION_CHECK","user":"svc-aiops-sec-agent","realm":"secops","client":"secops-backend","result":"SUCCESS","ip_address":"10.0.1.47","session_id":"sess-j0k1l2","token_type":"access_token","error":null}
+]

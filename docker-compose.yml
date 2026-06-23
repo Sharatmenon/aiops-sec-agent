@@ -1,0 +1,42 @@
+version: "3.9"
+
+# aiops-sec-agent — Local MCP Server Stack
+# Usage: docker compose up --build
+# Servers:
+#   kubectl-mcp:  http://localhost:8001/sse
+#   argocd-mcp:   http://localhost:8002/sse
+#   logquery-mcp: http://localhost:8003/sse
+
+services:
+  kubectl-mcp:
+    build:
+      context: ./mcp-servers/kubectl-mcp
+    container_name: aiops-kubectl-mcp
+    ports:
+      - "8001:8000"
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
+
+  argocd-mcp:
+    build:
+      context: ./mcp-servers/argocd-mcp
+    container_name: aiops-argocd-mcp
+    ports:
+      - "8002:8000"
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
+
+  logquery-mcp:
+    build:
+      context: ./mcp-servers/logquery-mcp
+    container_name: aiops-logquery-mcp
+    ports:
+      - "8003:8000"
+    volumes:
+      - ./logs:/logs:ro
+    environment:
+      - PYTHONUNBUFFERED=1
+      - LOGS_PATH=/logs
+    restart: unless-stopped
