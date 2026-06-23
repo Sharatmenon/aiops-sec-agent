@@ -69,7 +69,7 @@ Swap stub tools for MCP tools in `tools.py` when connecting to a live cluster.
 
 ## Use Case
 
-Built as a portfolio demonstration of AI-powered security operations for OT/ICS environments. The same pattern applies to any cloud-native platform running Kubernetes workloads — swap the log sources in `logs/` and update DuckDB queries in `db.py` to adapt.
+Built as a portfolio demonstration of AI-powered security operations for cloud-native environments. The same pattern applies to any platform running Kubernetes workloads — swap the log sources in `logs/` and update DuckDB queries in `db.py` to adapt.
 
 ## License
 
